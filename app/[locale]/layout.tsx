@@ -1,19 +1,15 @@
 import 'css/tailwind.css'
-import 'pliny/search/algolia.css'
 
-import { Space_Grotesk } from 'next/font/google'
-import { Analytics, AnalyticsConfig } from 'pliny/analytics'
-import { SearchProvider } from '@/components/search/SearchProvider'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
-import Footer from '@/components/Footer'
+import { maindescription, maintitle } from '@/data/localeMetadata'
 import siteMetadata from '@/data/siteMetadata'
-import { maintitle, maindescription } from '@/data/localeMetadata'
-import { ThemeProviders } from './theme-providers'
-import { Metadata } from 'next'
 import { dir } from 'i18next'
+import { Metadata } from 'next'
+import { Space_Grotesk } from 'next/font/google'
 import { LocaleTypes, locales } from './i18n/settings'
-import TwSizeIndicator from '@/components/helper/TwSizeIndicator'
+import { ThemeProviders } from './theme-providers'
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -82,15 +78,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
-        <TwSizeIndicator />
         <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between font-sans">
-              <SearchProvider>
-                <Header />
-                <main className="mb-auto">{children}</main>
-              </SearchProvider>
+              <Header />
+              <main className="mb-auto">{children}</main>
               <Footer />
             </div>
           </SectionContainer>

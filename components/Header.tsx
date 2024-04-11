@@ -1,16 +1,15 @@
 'use client'
 
-import { useParams, usePathname } from 'next/navigation'
-import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
+import siteMetadata from '@/data/siteMetadata'
+import { useTranslation } from 'app/[locale]/i18n/client'
+import type { LocaleTypes } from 'app/[locale]/i18n/settings'
+import { useParams, usePathname } from 'next/navigation'
+import LangSwitch from './LangSwitch'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import LangSwitch from './LangSwitch'
-import SearchButton from './search/SearchButton'
-import { useTranslation } from 'app/[locale]/i18n/client'
-import type { LocaleTypes } from 'app/[locale]/i18n/settings'
 
 const Header = () => {
   const locale = useParams()?.locale as LocaleTypes
@@ -54,7 +53,6 @@ const Header = () => {
                 </Link>
               )
             })}
-          <SearchButton />
           <ThemeSwitch />
           <LangSwitch />
           <MobileNav />

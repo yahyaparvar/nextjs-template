@@ -1,29 +1,17 @@
 'use client'
 
-import Link from './Link'
-import siteMetadata from '@/data/siteMetadata'
-import { maintitle } from '@/data/localeMetadata'
 import SocialIcon from '@/components/social-icons'
+import { maintitle } from '@/data/localeMetadata'
+import siteMetadata from '@/data/siteMetadata'
+import Link from './Link'
 
-import { useParams } from 'next/navigation'
-import { LocaleTypes } from 'app/[locale]/i18n/settings'
 import { useTranslation } from 'app/[locale]/i18n/client'
-
-import { useContactModal } from './formspree/store'
-import { ContactModal } from './formspree'
+import { LocaleTypes } from 'app/[locale]/i18n/settings'
+import { useParams } from 'next/navigation'
 
 export default function Footer() {
   const locale = useParams()?.locale as LocaleTypes
   const { t } = useTranslation(locale, 'footer')
-  const contactModal = useContactModal()
-
-  const handleContactClick = (): void => {
-    contactModal.onOpen()
-  }
-  function ContactClick(): void {
-    handleContactClick()
-  }
-
   return (
     <>
       <footer>
@@ -33,7 +21,7 @@ export default function Footer() {
               {siteMetadata.formspree === false ? (
                 <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
               ) : (
-                <button className="flex items-center focus:outline-none" onClick={ContactClick}>
+                <button className="flex items-center focus:outline-none">
                   <SocialIcon kind="mail" size={6} />
                 </button>
               )}
@@ -66,7 +54,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <ContactModal />
     </>
   )
 }
