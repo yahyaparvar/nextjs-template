@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: 'Next.js i18n Starter Blog',
-  author: 'Khantech group',
-  headerTitle: 'Gaming',
-  description: 'A blog created with Next.js, i18n and Tailwind.css',
+  author: 'Yaya Parvar',
+  headerTitle: 'Template',
+  description: 'A template created with Next.js, i18n and Tailwind.css',
   language: 'en',
   theme: 'system', // system, dark or light
   siteUrl: 'https://github.com',

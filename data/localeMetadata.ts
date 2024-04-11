@@ -3,11 +3,11 @@ type Metadata = {
 }
 
 export const maintitle: Metadata = {
-  en: 'Gaming khantech',
-  fr: 'Jeu Khantech',
+  en: 'NextJS Template',
+  fr: 'NextJS Template',
 }
 
 export const maindescription: Metadata = {
-  en: 'A Project created with Next.js, i18n and Tailwind.css for khantech',
-  fr: 'Un projet créé avec Next.js, i18n et Tailwind.css pour khantech',
+  en: 'A Project created with Next.js, i18n and Tailwind.css',
+  fr: 'Un projet créé avec Next.js, i18n et Tailwind.css',
 }
