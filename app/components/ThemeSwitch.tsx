@@ -18,11 +18,11 @@ export default function ThemeSwitch() {
   };
 
   return (
-    <div ref={ref} className="relative inline-block w-[6.25rem] text-left">
+    <div ref={ref} className="relative inline-block min-w-[6.25rem] text-left">
       <div>
         <button
           type="button"
-          className="inline-flex justify-center w-full rounded-md border shadow-sm px-4 py-2 bg-background text-sm font-medium text-primary focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+          className="inline-flex justify-between items-center w-full rounded-md border shadow-sm px-4 py-2 bg-background text-sm font-medium text-primary focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
           id="options-menu"
           aria-expanded={isOpen}
           onClick={toggleDropdown}
