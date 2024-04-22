@@ -13,8 +13,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        primary: "var(--text-base)",
+        secondary: "var(--text-secondary)",
+        background: "var(--background)",
+        button: "var(--button)",
+        selected: "var(--selected)",
+        dropdown: "var(--dropdown)",
+        dropdownHover: "var(--dropdown-hover)",
+        buttonSecondary: "var(--button-secondary)",
+      },
     },
   },
   plugins: [],
+  darkMode: "class",
 };
 export default config;

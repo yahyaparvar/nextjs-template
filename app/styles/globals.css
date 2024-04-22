@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --text-base: #2200ff;
+    --text-secondary: #000000;
+    --background: #fff;
+    --button: #fff;
+    --dropdown: #dadce6;
+    --dropdown-hover: #c2cedf;
+    --button-secondary: #000;
+    --selected: #9ec6ff;
+  }
+  :root[class~="dark"] {
+    --text-base: #ff0000;
+    --background: #000000;
+  }
+  :root[class~="custom"] {
+    --background: #060f8c;
+    --text-base: #00ff8c;
+  }
+}
+
+body {
+  color: var(--text-base);
+  background-color: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
