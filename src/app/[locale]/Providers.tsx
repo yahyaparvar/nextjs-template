@@ -15,21 +15,20 @@ const Providers = ({
 }) => {
   const messages = useMessages();
   return (
-    <NextIntlClientProvider
-      locale={locale}
-      messages={messages as AbstractIntlMessages}
+    <ThemeProvider
+      attribute="class"
+      enableSystem
+      defaultTheme="dark"
+      enableColorScheme={false}
+      themes={["light", "dark", "custom"]}
     >
-      <ThemeProvider
-        attribute="class"
-        enableSystem
-        disableTransitionOnChange={false}
-        enableColorScheme={false}
-        themes={["light", "dark", "custom"]}
-        defaultTheme="system"
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages as AbstractIntlMessages}
       >
         {children}
-      </ThemeProvider>
-    </NextIntlClientProvider>
+      </NextIntlClientProvider>
+    </ThemeProvider>
   );
 };
 

@@ -13,22 +13,31 @@
     --selected: #9ec6ff;
   }
   .dark {
-    --text-base: #ff0000;
-    --background: #000000;
+    --text-base: #b3b3ff; /* Lighter blue for text */
+    --text-secondary: #e6e6e6; /* Light gray for secondary text */
+    --background: #121212; /* Very dark gray for background */
+    --button: #333333; /* Dark gray for buttons */
+    --dropdown: #333333; /* Dark gray for dropdowns */
+    --dropdown-hover: #444444; /* Slightly lighter gray for dropdown hover */
+    --button-secondary: #ffffff; /* White for secondary buttons */
+    --selected: #5a7dff;
   }
   .custom {
-    --background: #060f8c;
-    --text-base: #00ff8c;
+    --text-base: #f8edeb; /* Creamy for text */
+    --text-secondary: #ffadad; /* Soft red for secondary text */
+    --background: #9d8189; /* Muted purple for background */
+    --button: #eac4d5; /* Light pink for buttons */
+    --dropdown: #b5838d; /* Warm purple for dropdowns */
+    --dropdown-hover: #9d8189; /* Muted purple for dropdown hover */
+    --button-secondary: #2200ff; /* Blue for button text */
+    --selected: #f4acb7;
   }
 }
 
-* {
-  transition: background 0.2s;
-}
-
-body {
-  color: var(--text-base);
-  background-color: var(--background);
+@layer base {
+  body {
+    @apply bg-background text-[var(--text-base)];
+  }
 }
 
 @layer utilities {
