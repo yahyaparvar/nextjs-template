@@ -11,7 +11,10 @@ export default function ThemeSwitch() {
   const ref = useRef(null);
   useEffect(() => setMounted(true), []);
   useOnClickOutside(ref, () => setIsOpen(false));
-  if (!mounted) return null;
+  if (!mounted)
+    return (
+      <div className="relative inline-block min-w-[6.25rem] h-[40px] text-left"></div>
+    );
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);

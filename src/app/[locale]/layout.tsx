@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "../../styles/globals.css";
 import Providers from "./Providers";
-import "./styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning className={inter.className}>
       <body>
-        <Providers>
+        <Providers locale={locale}>
           <div>navbar</div>
           <main className="flex min-h-screen flex-col items-center justify-between p-24">
             {children}
