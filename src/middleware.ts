@@ -20,5 +20,5 @@ export default async function middleware(
 }
 
 export const config = {
-  matcher: ["/", "/(fr|en)/:path*"],
+  matcher: ["/", `/(fr|en|de|ru|ja)/:path*`],
 };

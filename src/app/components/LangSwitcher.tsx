@@ -18,6 +18,9 @@ const LangSwitcher: React.FC = () => {
   const options: Option[] = [
     { country: "English", code: "en" },
     { country: "French", code: "fr" },
+    { country: "Japanese", code: "ja" },
+    { country: "German", code: "de" },
+    { country: "Russian", code: "ru" },
   ];
 
   const setOption = (option: Option) => {
