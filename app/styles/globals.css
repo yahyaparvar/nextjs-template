@@ -12,14 +12,18 @@
     --button-secondary: #000;
     --selected: #9ec6ff;
   }
-  :root[class~="dark"] {
+  .dark {
     --text-base: #ff0000;
     --background: #000000;
   }
-  :root[class~="custom"] {
+  .custom {
     --background: #060f8c;
     --text-base: #00ff8c;
   }
+}
+
+* {
+  transition: background 0.2s;
 }
 
 body {
