@@ -90,7 +90,6 @@ const LangSwitcher: React.FC = () => {
           </ul>
         </div>
       </div>
-      {t("hello")}
     </div>
   );
 };

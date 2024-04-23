@@ -1,6 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { FiSun } from "react-icons/fi";
 import { useOnClickOutside } from "usehooks-ts";
 
@@ -9,6 +9,9 @@ export default function ThemeSwitch() {
   const [isOpen, setIsOpen] = useState(false); // New state to control dropdown visibility
   const { setTheme, resolvedTheme, themes, theme } = useTheme();
   const ref = useRef(null);
+  useLayoutEffect(() => {
+    setTheme(resolvedTheme!);
+  }, []);
   useEffect(() => setMounted(true), []);
   useOnClickOutside(ref, () => setIsOpen(false));
   if (!mounted)
@@ -34,7 +37,6 @@ export default function ThemeSwitch() {
           <span className="ml-2">{theme}</span>
         </button>
       </div>
-
       {isOpen && (
         <div className="origin-top-right w-full absolute right-0 mt-2 rounded-md shadow-lg bg-dropdown">
           <div
