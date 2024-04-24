@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --primary: 240 5.9% 10%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --primary: 0 0% 98%;
+  }
+
+  .orange {
+    --background: 24.6 95% 53.1%;
+    --primary: 24.6 95% 53.1%;
+  }
+}
+
+@layer base {
+  * {
+    transition: background 0.2s;
+  }
+  body {
+    @apply bg-background text-primary;
+  }
+}

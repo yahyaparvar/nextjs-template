@@ -1,10 +1,20 @@
-import { useTranslations } from "next-intl";
+import ThemeSwitch from '@/components/theme-toggle'
+import { Metadata } from 'next'
+import { useTranslations } from 'next-intl'
+import LangSwitcher from './LangSwitcher'
 
-export default function Home() {
-  const t = useTranslations("");
+export const metadata: Metadata = {
+  title: 'Dashboard',
+  description: 'Example dashboard app built using the components.'
+}
+
+export default function DashboardPage() {
+  const t = useTranslations('')
   return (
-    <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-      {t("hello")}
-    </div>
-  );
+    <>
+      {t('hello')}
+      <ThemeSwitch />
+      <LangSwitcher />
+    </>
+  )
 }

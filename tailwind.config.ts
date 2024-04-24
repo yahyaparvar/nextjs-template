@@ -1,31 +1,37 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
-const config: Config = {
+const config = {
+  darkMode: ['class'],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}'
   ],
+  prefix: '',
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      colors: {
-        primary: "var(--text-base)",
-        secondary: "var(--text-secondary)",
-        background: "var(--background)",
-        button: "var(--button)",
-        selected: "var(--selected)",
-        dropdown: "var(--dropdown)",
-        dropdownHover: "var(--dropdown-hover)",
-        buttonSecondary: "var(--button-secondary)",
-      },
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px'
+      }
     },
+    extend: {
+      colors: {
+        background: 'hsl(var(--background))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))'
+        }
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out'
+      }
+    }
   },
-  plugins: [],
-  darkMode: ["class"],
-};
-export default config;
+  plugins: [require('tailwindcss-animate')]
+} satisfies Config
+
+export default config
