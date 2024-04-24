@@ -18,7 +18,16 @@ export default function ThemeSwitch() {
   useOnClickOutside(ref, () => setIsOpen(false))
   if (!mounted)
     return (
-      <div className='relative inline-block h-[40px] min-w-[6.25rem] text-left'></div>
+      <Button
+        size='small'
+        type='button'
+        className='text-destructive inline-flex w-full items-center justify-between gap-3'
+        aria-expanded={isOpen}
+        onClick={() => {}}
+      >
+        <span className='ml-2'>{capitalize(theme!)}</span>
+        <FiSun />
+      </Button>
     )
 
   const toggleDropdown = () => {
@@ -26,20 +35,18 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <div ref={ref} className='relative inline-block min-w-[6.25rem] text-left'>
-      <div>
-        <Button
-          size='small'
-          type='button'
-          className='text-destructive inline-flex w-full items-center justify-between'
-          id='options-menu'
-          aria-expanded={isOpen}
-          onClick={toggleDropdown}
-        >
-          <span className='ml-2'>{capitalize(theme!)}</span>
-          <FiSun />
-        </Button>
-      </div>
+    <div ref={ref} className='relative inline-block text-left'>
+      <Button
+        size='small'
+        type='button'
+        className='text-destructive inline-flex w-full items-center justify-between gap-3'
+        id='options-menu'
+        aria-expanded={isOpen}
+        onClick={toggleDropdown}
+      >
+        <span className='ml-2'>{capitalize(theme!)}</span>
+        <FiSun />
+      </Button>
       {isOpen && (
         <div className='bg-dropdown absolute right-0 mt-2 w-full origin-top-right rounded-md shadow-lg'>
           <div

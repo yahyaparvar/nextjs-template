@@ -6,6 +6,7 @@ import {
   useMessages
 } from 'next-intl'
 import { Inter } from 'next/font/google'
+import { Header } from './components/shared/Header'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -36,6 +37,7 @@ export default function RootLayout({
             locale={locale}
             messages={messages as AbstractIntlMessages}
           >
+            <Header />
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>
