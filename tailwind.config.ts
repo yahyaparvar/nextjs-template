@@ -19,11 +19,16 @@ const config = {
     },
     extend: {
       colors: {
-        background: 'hsl(var(--background))',
+        background: 'var(--background)',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
-        }
+          DEFAULT: 'var(--primary)'
+        },
+        secondary: 'var(--text-secondary)',
+        button: 'var(--button)',
+        selected: 'var(--selected)',
+        dropdown: 'var(--dropdown)',
+        dropdownHover: 'var(--dropdown-hover)',
+        buttonSecondary: 'var(--button-secondary)'
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
