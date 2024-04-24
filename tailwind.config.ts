@@ -23,7 +23,7 @@ const config = {
         primary: {
           DEFAULT: 'var(--primary)'
         },
-        secondary: 'var(--text-secondary)',
+        secondary: 'var(--secondary)',
         button: 'var(--button)',
         selected: 'var(--selected)',
         dropdown: 'var(--dropdown)',

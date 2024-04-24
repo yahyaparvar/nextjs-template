@@ -1,7 +1,7 @@
-import ThemeSwitch from '@/components/theme-toggle'
+import ThemeSwitch from '@/src/app/[locale]/components/theme-toggle'
 import { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import LangSwitcher from './LangSwitcher'
+import LangSwitcher from './components/LangSwitcher'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -15,6 +15,7 @@ export default function DashboardPage() {
       {t('hello')}
       <ThemeSwitch />
       <LangSwitcher />
+      <div className='bg-primary'>sqiwndliweujnp</div>
     </>
   )
 }

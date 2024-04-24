@@ -4,41 +4,38 @@
 
 @layer base {
   :root {
-    --primary: #2200ff;
-    --text-secondary: #000000;
+    --primary: #333366;
+    --secondary: #097fa5;
     --background: #fff;
-    --button: #fff;
-    --dropdown: #dadce6;
-    --dropdown-hover: #c2cedf;
+    --button: #097fa5;
+    --dropdown: #e0f4ff;
+    --dropdown-hover: #b3e5ff;
     --button-secondary: #000;
     --selected: #9ec6ff;
   }
   .dark {
-    --primary: #b3b3ff; /* Lighter blue for text */
-    --text-secondary: #e6e6e6; /* Light gray for secondary text */
-    --background: #121212; /* Very dark gray for background */
-    --button: #333333; /* Dark gray for buttons */
-    --dropdown: #333333; /* Dark gray for dropdowns */
-    --dropdown-hover: #444444; /* Slightly lighter gray for dropdown hover */
-    --button-secondary: #ffffff; /* White for secondary buttons */
-    --selected: #5a7dff;
+    --primary: #a6b1e1;
+    --secondary: #4dc0e8;
+    --background: #1a1a2e;
+    --button: #4dc0e8;
+    --dropdown: #2e2e46;
+    --dropdown-hover: #3b3b5c;
+    --button-secondary: #a6b1e1;
+    --selected: #636e8c;
   }
-  .orange {
-    --primary: #f8edeb; /* Creamy for text */
-    --text-secondary: #ffadad; /* Soft red for secondary text */
-    --background: #9d8189; /* Muted purple for background */
-    --button: #eac4d5; /* Light pink for buttons */
-    --dropdown: #b5838d; /* Warm purple for dropdowns */
-    --dropdown-hover: #9d8189; /* Muted purple for dropdown hover */
-    --button-secondary: #2200ff; /* Blue for button text */
-    --selected: #f4acb7;
+  .custom {
+    --primary: #556b2f;
+    --secondary: #8fbc8f;
+    --background: #f5f5f5;
+    --button: #8fbc8f;
+    --dropdown: #dcdcdc;
+    --dropdown-hover: #c0c0c0;
+    --button-secondary: #556b2f;
+    --selected: #8fbc8f;
   }
 }
 
 @layer base {
-  * {
-    transition: background 0.2s;
-  }
   body {
     @apply bg-background text-primary;
   }

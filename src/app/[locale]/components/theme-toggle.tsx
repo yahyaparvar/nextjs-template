@@ -1,8 +1,10 @@
 'use client'
+import { capitalize } from '@/lib/utils'
 import { useTheme } from 'next-themes'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { FiSun } from 'react-icons/fi'
 import { useOnClickOutside } from 'usehooks-ts'
+import Button from './Button'
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false)
@@ -26,16 +28,17 @@ export default function ThemeSwitch() {
   return (
     <div ref={ref} className='relative inline-block min-w-[6.25rem] text-left'>
       <div>
-        <button
+        <Button
+          size='small'
           type='button'
-          className='inline-flex w-full items-center justify-between rounded-md border bg-background px-4 py-2 text-sm font-medium text-destructive shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary'
+          className='text-destructive inline-flex w-full items-center justify-between'
           id='options-menu'
           aria-expanded={isOpen}
           onClick={toggleDropdown}
         >
+          <span className='ml-2'>{capitalize(theme!)}</span>
           <FiSun />
-          <span className='ml-2'>{theme}</span>
-        </button>
+        </Button>
       </div>
       {isOpen && (
         <div className='bg-dropdown absolute right-0 mt-2 w-full origin-top-right rounded-md shadow-lg'>
@@ -53,13 +56,13 @@ export default function ThemeSwitch() {
                     setTheme(themeItem)
                     setIsOpen(false)
                   }}
-                  className={`hover:bg-dropdownHover block w-full px-4 py-2 text-sm ${
+                  className={`hover:bg-dropdownHover block w-full px-4 py-2 text-left text-sm ${
                     themeItem === theme
                       ? 'bg-selected hover:bg-selected text-primary'
                       : 'text-secondary'
                   }`}
                 >
-                  {themeItem}
+                  {capitalize(themeItem)}
                 </button>
               )
             })}

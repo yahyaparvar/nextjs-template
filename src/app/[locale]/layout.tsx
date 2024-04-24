@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeProvider } from '@/src/app/[locale]/components/theme-provider'
 import type { Metadata } from 'next'
 import {
   AbstractIntlMessages,
@@ -30,7 +30,7 @@ export default function RootLayout({
           enableSystem
           attribute='class'
           defaultTheme='system'
-          themes={['light', 'dark', 'orange']}
+          themes={['light', 'dark', 'custom']}
         >
           <NextIntlClientProvider
             locale={locale}
