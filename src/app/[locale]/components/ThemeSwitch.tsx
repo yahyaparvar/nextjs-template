@@ -1,7 +1,7 @@
 'use client'
 import { capitalize } from '@/lib/utils'
 import { useTheme } from 'next-themes'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { FiSun } from 'react-icons/fi'
 import { useOnClickOutside } from 'usehooks-ts'
 import Button from './Button'
@@ -11,9 +11,6 @@ export default function ThemeSwitch() {
   const [isOpen, setIsOpen] = useState(false) // New state to control dropdown visibility
   const { setTheme, resolvedTheme, themes, theme } = useTheme()
   const ref = useRef(null)
-  useLayoutEffect(() => {
-    setTheme(resolvedTheme!)
-  }, [])
   useEffect(() => setMounted(true), [])
   useOnClickOutside(ref, () => setIsOpen(false))
   if (!mounted)
@@ -25,7 +22,6 @@ export default function ThemeSwitch() {
         aria-expanded={isOpen}
         onClick={() => {}}
       >
-        <span className='ml-2'>{capitalize(theme!)}</span>
         <FiSun />
       </Button>
     )
