@@ -1,10 +1,12 @@
-import { useTranslations } from "next-intl";
+import { Metadata } from 'next'
+import { useTranslations } from 'next-intl'
 
-export default function Home() {
-  const t = useTranslations("");
-  return (
-    <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-      {t("hello")}
-    </div>
-  );
+export const metadata: Metadata = {
+  title: 'Dashboard',
+  description: 'Example dashboard app built using the components.'
+}
+
+export default function DashboardPage() {
+  const t = useTranslations('')
+  return <>{t('hello')}</>
 }

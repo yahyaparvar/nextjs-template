@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #333366;
+    --secondary: #097fa5;
+    --background: #fff;
+    --button: #097fa5;
+    --dropdown: #e0f4ff;
+    --dropdown-hover: #b3e5ff;
+    --button-secondary: #000;
+    --selected: #9ec6ff;
+  }
+  .dark {
+    --primary: #a6b1e1;
+    --secondary: #4dc0e8;
+    --background: #1a1a2e;
+    --button: #4dc0e8;
+    --dropdown: #2e2e46;
+    --dropdown-hover: #3b3b5c;
+    --button-secondary: #a6b1e1;
+    --selected: #636e8c;
+  }
+  .custom {
+    --primary: #556b2f;
+    --secondary: #8fbc8f;
+    --background: #f5f5f5;
+    --button: #8fbc8f;
+    --dropdown: #dcdcdc;
+    --dropdown-hover: #c0c0c0;
+    --button-secondary: #556b2f;
+    --selected: #8fbc8f;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primary;
+  }
+}

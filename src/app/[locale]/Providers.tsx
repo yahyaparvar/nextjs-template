@@ -1,26 +1,26 @@
 import {
   AbstractIntlMessages,
   NextIntlClientProvider,
-  useMessages,
-} from "next-intl";
-import { ThemeProvider } from "next-themes";
-import { ReactNode } from "react";
+  useMessages
+} from 'next-intl'
+import { ThemeProvider } from 'next-themes'
+import { ReactNode } from 'react'
 
 const Providers = ({
   children,
-  locale,
+  locale
 }: {
-  children: ReactNode;
-  locale: string;
+  children: ReactNode
+  locale: string
 }) => {
-  const messages = useMessages();
+  const messages = useMessages()
   return (
     <ThemeProvider
-      attribute="class"
+      attribute='class'
       enableSystem
-      defaultTheme="dark"
+      defaultTheme='dark'
       enableColorScheme={false}
-      themes={["light", "dark", "custom"]}
+      themes={['light', 'dark', 'custom']}
     >
       <NextIntlClientProvider
         locale={locale}
@@ -29,7 +29,7 @@ const Providers = ({
         {children}
       </NextIntlClientProvider>
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default Providers;
+export default Providers
