@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@/src/app/[locale]/components/theme-provider'
+import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider'
 import type { Metadata } from 'next'
 import {
   AbstractIntlMessages,

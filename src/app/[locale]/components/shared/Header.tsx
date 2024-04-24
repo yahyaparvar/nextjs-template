@@ -1,6 +1,6 @@
 'use client'
 import LangSwitcher from '../LangSwitcher'
-import ThemeSwitch from '../theme-toggle'
+import ThemeSwitch from '../ThemeSwitch'
 
 export const Header = () => {
   return (
