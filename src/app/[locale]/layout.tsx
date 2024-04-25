@@ -6,6 +6,7 @@ import {
   useMessages
 } from 'next-intl'
 import { Inter, Rubik, Space_Grotesk } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
 
@@ -45,16 +46,15 @@ export default function RootLayout({
         <ThemeProvider
           enableSystem
           attribute='class'
-          defaultTheme='system'
+          defaultTheme='light'
           themes={[
             'light',
             'dark',
-            'twitter',
-            'matrix',
             'instagram',
             'facebook',
             'discord',
             'netflix',
+            'twilight',
             'reddit'
           ]}
         >
@@ -62,6 +62,7 @@ export default function RootLayout({
             locale={locale}
             messages={messages as AbstractIntlMessages}
           >
+            <NextTopLoader color='var(--primary)' />
             <Header locale={locale} />
             <main className='mx-auto max-w-screen-2xl'>{children}</main>
           </NextIntlClientProvider>
