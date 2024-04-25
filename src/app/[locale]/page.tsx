@@ -1,11 +1,5 @@
-import { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import Button from './components/Button'
-
-export const metadata: Metadata = {
-  title: 'Dashboard',
-  description: 'Example dashboard app built using the components.'
-}
 
 export default function DashboardPage() {
   const t = useTranslations('')
@@ -31,6 +25,31 @@ export default function DashboardPage() {
           <Button rounded size='large' variant='secondary'>
             Learn More!
           </Button>
+        </div>
+      </section>
+      <section className='bg-background-secondary py-20 max-lg:py-10'>
+        <div className='mx-auto grid max-w-screen-lg grid-cols-3 gap-7 px-8 py-5 max-lg:max-w-fit max-lg:grid-cols-1 max-lg:gap-10'>
+          <div className='text-center'>
+            <h2 className='mb-3  text-xl font-semibold'>Approachable</h2>
+            <p className='text-text-secondary max-lg:max-w-[500px]'>
+              Add components without sending additional client-side JavaScript.
+              Built on the latest React features.
+            </p>
+          </div>
+          <div className='text-center'>
+            <h2 className='mb-3 text-xl font-semibold'>Versatile</h2>
+            <p className='text-text-secondary max-lg:max-w-[500px]'>
+              Automatic Image, Font, and Script Optimizations for improved UX
+              and Core Web Vitals.
+            </p>
+          </div>
+          <div className='text-center'>
+            <h2 className='mb-3 text-xl font-semibold'>Performant</h2>
+            <p className='text-text-secondary max-lg:max-w-[500px]'>
+              A rich, incrementally adoptable ecosystem that scales between a
+              library and a full-featured template.
+            </p>
+          </div>
         </div>
       </section>
     </div>

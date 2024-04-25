@@ -27,7 +27,9 @@ const config = {
           DEFAULT: 'var(--primary)'
         },
         'button-secondary': 'var(--button-secondary)',
+        'button-text': 'var(--button-text)',
         'text-secondary': 'var(--text-secondary)',
+        'background-secondary': 'var(--background-secondary)',
         secondary: 'var(--secondary)',
         button: 'var(--button)',
         selected: 'var(--selected)',

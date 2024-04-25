@@ -1,10 +1,14 @@
 'use client'
+import { Link } from '@/src/navigation'
+import { FC } from 'react'
 import GithubIcon from '../../icons/github'
 import LogoIcon from '../../icons/logo'
 import LangSwitcher from './LangSwitcher'
 import ThemeSwitch from './ThemeSwitch'
-
-export const Header = () => {
+interface Props {
+  locale: string
+}
+export const Header: FC<Props> = ({ locale }) => {
   return (
     <div className='mx-auto flex max-w-screen-2xl flex-row items-center justify-between p-5'>
       <a href='/'>
@@ -17,7 +21,9 @@ export const Header = () => {
       </a>
       <div className='flex flex-row items-center gap-3'>
         <nav className='mr-10 inline-flex gap-5'>
-          <a href=''>About</a>
+          <Link lang={locale} href={`/about`}>
+            About
+          </Link>
           <a href=''>Support</a>
           <a href=''>Other</a>
         </nav>

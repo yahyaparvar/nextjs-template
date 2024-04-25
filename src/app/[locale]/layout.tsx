@@ -37,10 +37,8 @@ export default function RootLayout({
             locale={locale}
             messages={messages as AbstractIntlMessages}
           >
-            <Header />
-            <main className='max-w-screen-2xl'>
-            {children}
-            </main>
+            <Header locale={locale} />
+            <main className='mx-auto max-w-screen-2xl'>{children}</main>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
