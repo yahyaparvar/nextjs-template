@@ -37,6 +37,10 @@ const config = {
         dropdownHover: 'var(--dropdown-hover)',
         buttonSecondary: 'var(--button-secondary)'
       },
+
+      fontFamily: {
+        sans: ['var(--font-space-grotesk)', 'var(--rubik)']
+      },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'

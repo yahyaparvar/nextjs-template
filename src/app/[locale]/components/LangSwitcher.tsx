@@ -20,14 +20,17 @@ const LangSwitcher: React.FC = () => {
   const urlSegments = useSelectedLayoutSegments()
 
   const [isOptionsExpanded, setIsOptionsExpanded] = useState(false)
-
   const options: Option[] = [
-    { country: 'English', code: 'en' },
-    { country: 'French', code: 'fr' },
-    { country: 'Japanese', code: 'ja' },
-    { country: 'German', code: 'de' },
-    { country: 'Russian', code: 'ru' }
+    { country: 'English', code: 'en' },  // Native name is the same
+    { country: 'Deutsch', code: 'de' },
+    { country: 'Français', code: 'fr' },
+    { country: 'Español', code: 'es' },
+    { country: 'Русский', code: 'ru' },
+    { country: '日本語', code: 'ja' },
+    { country: 'العربية', code: 'ar' },
+    { country: 'فارسی', code: 'fa' }
   ]
+  
 
   const setOption = (option: Option) => {
     setIsOptionsExpanded(false)
@@ -57,6 +60,7 @@ const LangSwitcher: React.FC = () => {
               {options.map(lang => {
                 return (
                   <button
+                    lang={lang.code}
                     key={lang.code}
                     onMouseDown={e => {
                       e.preventDefault()

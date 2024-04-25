@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
       <Button
         size='small'
         type='button'
-        className='text-destructive inline-flex w-fit items-center justify-between gap-3'
+        className='text-destructive inline-flex w-fit min-w-[95px] items-center justify-between gap-3'
         id='options-menu'
         aria-expanded={isOpen}
         onClick={() => {}}
@@ -39,7 +39,7 @@ export default function ThemeSwitch() {
       <Button
         size='small'
         type='button'
-        className='text-destructive inline-flex w-full items-center justify-between gap-3'
+        className='text-destructive inline-flex w-full min-w-[95px] items-center justify-between gap-3'
         id='options-menu'
         aria-expanded={isOpen}
         onClick={toggleDropdown}

@@ -5,12 +5,22 @@ import {
   NextIntlClientProvider,
   useMessages
 } from 'next-intl'
-import { Inter } from 'next/font/google'
+import { Inter, Rubik, Space_Grotesk } from 'next/font/google'
 import { Header } from './components/Header'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--inter'
+})
+const rubik = Rubik({
+  subsets: ['arabic'],
+  variable: '--rubik'
+})
+const space_grotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk'
+})
 export const metadata: Metadata = {
   title: 'Next Temp',
   description: 'create next app By Yahya Parvar!'
@@ -25,8 +35,13 @@ export default function RootLayout({
 }) {
   const messages = useMessages()
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
+    <html
+      lang={locale}
+      dir={locale === 'ar' || locale == 'fa' ? 'rtl' : 'ltr'}
+      className={`${space_grotesk.variable} ${rubik.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <body>
         <ThemeProvider
           enableSystem
           attribute='class'

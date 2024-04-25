@@ -40,6 +40,12 @@
 }
 
 @layer base {
+  *:lang(ar) {
+    font-family: var(--rubik) !important;
+  }
+  *:lang(fa) {
+    font-family: var(--rubik) !important;
+  }
   body {
     @apply bg-background text-primary;
   }

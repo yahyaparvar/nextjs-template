@@ -18,7 +18,7 @@ export const Header: FC<Props> = ({ locale }) => {
           <div className='mb-2 h-14 w-14'>
             <LogoIcon />
           </div>
-          <strong className='ml-2 select-none'>Template</strong>
+          <strong className='mx-2 select-none'>Template</strong>
         </div>
       </a>
       <div className='flex flex-row items-center gap-3'>
