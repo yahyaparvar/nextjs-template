@@ -46,7 +46,17 @@ export default function RootLayout({
           enableSystem
           attribute='class'
           defaultTheme='system'
-          themes={['light', 'dark', 'custom']}
+          themes={[
+            'light',
+            'dark',
+            'twitter',
+            'matrix',
+            'instagram',
+            'facebook',
+            'discord',
+            'netflix',
+            'reddit'
+          ]}
         >
           <NextIntlClientProvider
             locale={locale}
