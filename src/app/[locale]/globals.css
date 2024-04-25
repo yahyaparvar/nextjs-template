@@ -6,12 +6,17 @@
   :root {
     --primary: #333366;
     --secondary: #097fa5;
-    --background: #fff;
+    --background: #ededed;
     --button: #097fa5;
+    --button: #097fa5;
+    --text-secondary: #3c3c3c;
     --dropdown: #e0f4ff;
     --dropdown-hover: #b3e5ff;
-    --button-secondary: #000;
+    --button-secondary: #e7e7e7;
     --selected: #9ec6ff;
+    --logo-shadow: #053949;
+    --logo-body: #00d8fe;
+    --span-bg: linear-gradient(to right, #4e4e9e, #097fa5, #3e87ed);
   }
   .dark {
     --primary: #a6b1e1;

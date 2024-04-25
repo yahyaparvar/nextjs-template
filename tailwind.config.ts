@@ -18,11 +18,16 @@ const config = {
       }
     },
     extend: {
+      backgroundImage: {
+        'span-bg': 'var(--span-bg)'
+      },
       colors: {
         background: 'var(--background)',
         primary: {
           DEFAULT: 'var(--primary)'
         },
+        'button-secondary': 'var(--button-secondary)',
+        'text-secondary': 'var(--text-secondary)',
         secondary: 'var(--secondary)',
         button: 'var(--button)',
         selected: 'var(--selected)',
