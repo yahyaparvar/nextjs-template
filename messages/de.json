@@ -1,3 +1,19 @@
 {
-  "hello": "Hallo"
+  "About": "Über",
+  "Support": "Unterstützung",
+  "Other": "Andere",
+  "Theme": "Thema",
+  "An": "Ein",
+  "Booster": "Booster",
+  "to_Your_NextJS_Apps": "für Ihre NextJS-Apps",
+  "An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications": "Ein zugängliches, leistungsfähiges und vielseitiges Boilerplate für den Bau von SSR-Anwendungen.",
+  "Use_Template": "Vorlage verwenden",
+  "Learn_More": "Erfahren Sie mehr!",
+  "Approachable": "Zugänglich",
+  "Add_components_without_sending_additional_client_side_JavaScript_Built_on_the_latest_React_features": "Fügen Sie Komponenten hinzu, ohne zusätzliches clientseitiges JavaScript zu senden. Basierend auf den neuesten React-Funktionen.",
+  "Automatic_Image_Font_and_Script_Optimizations_for_improved_UX_and_Core_Web_Vitals": "Automatische Bild-, Schrift- und Skriptoptimierungen für eine verbesserte Benutzererfahrung und Core Web Vitals.",
+  "Versatile": "Vielseitig",
+  "A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app": "Eine reiche, unglaublich anpassungsfähige Vorlage, die zwischen einer kleinen Showcase-Website und einer vollwertigen App skaliert.",
+  "This_is_a_simple_about_page_just_to_show_how_you_can_use_the_internationalization_in_different_pages": "Dies ist eine einfache Über-Seite, um zu zeigen, wie Sie die Internationalisierung auf verschiedenen Seiten nutzen können",
+  "Performant": "Leistungsfähig"
 }
