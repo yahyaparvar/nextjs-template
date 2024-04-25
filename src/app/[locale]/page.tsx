@@ -8,5 +8,9 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   const t = useTranslations('')
-  return <>{t('hello')}</>
+  return <div>
+    <section>
+    <h1></h1>
+    </section>
+  </div>
 }

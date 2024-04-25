@@ -19,9 +19,11 @@ export default function ThemeSwitch() {
         size='small'
         type='button'
         className='text-destructive inline-flex w-full items-center justify-between gap-3'
+        id='options-menu'
         aria-expanded={isOpen}
-        onClick={() => {}}
+        onClick={()=>{}}
       >
+        <span className='ml-2'>Theme</span>
         <FiSun />
       </Button>
     )
@@ -40,7 +42,7 @@ export default function ThemeSwitch() {
         aria-expanded={isOpen}
         onClick={toggleDropdown}
       >
-        <span className='ml-2'>{capitalize(theme!)}</span>
+        <span className='ml-2'>Theme</span>
         <FiSun />
       </Button>
       {isOpen && (
