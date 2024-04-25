@@ -1,5 +1,6 @@
 'use client'
 import { Link } from '@/src/navigation'
+import { useTranslations } from 'next-intl'
 import { FC } from 'react'
 import GithubIcon from '../../icons/github'
 import LogoIcon from '../../icons/logo'
@@ -9,23 +10,24 @@ interface Props {
   locale: string
 }
 export const Header: FC<Props> = ({ locale }) => {
+  const t = useTranslations('')
   return (
     <div className='mx-auto flex max-w-screen-2xl flex-row items-center justify-between p-5'>
       <a href='/'>
         <div className='flex flex-row items-center'>
-          <div className='h-14 w-14'>
+          <div className='mb-2 h-14 w-14'>
             <LogoIcon />
           </div>
-          <strong className='ml-2 mt-2 select-none'>Template</strong>
+          <strong className='ml-2 select-none'>Template</strong>
         </div>
       </a>
       <div className='flex flex-row items-center gap-3'>
         <nav className='mr-10 inline-flex gap-5'>
           <Link lang={locale} href={`/about`}>
-            About
+            {t('About')}
           </Link>
-          <a href=''>Support</a>
-          <a href=''>Other</a>
+          <a href=''>{t('Support')}</a>
+          <a href=''>{t('Other')}</a>
         </nav>
         <ThemeSwitch />
         <LangSwitcher />

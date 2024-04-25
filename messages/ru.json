@@ -1,3 +1,19 @@
 {
-  "hello": " Привет"
+  "About": "О нас",
+  "Support": "Поддержка",
+  "Other": "Другое",
+  "Theme": "Тема",
+  "An": "Один",
+  "Booster": "Ускоритель",
+  "to_Your_NextJS_Apps": "в ваши приложения NextJS",
+  "An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications": "Доступный, производительный и универсальный шаблон для создания SSR-приложений.",
+  "Use_Template": "Использовать шаблон",
+  "Learn_More": "Узнать больше!",
+  "Approachable": "Доступный",
+  "Add_components_without_sending_additional_client_side_JavaScript_Built_on_the_latest_React_features": "Добавляйте компоненты без отправки дополнительного клиентского JavaScript. Сделано на основе последних возможностей React.",
+  "Automatic_Image_Font_and_Script_Optimizations_for_improved_UX_and_Core_Web_Vitals": "Автоматическая оптимизация изображений, шрифтов и скриптов для улучшения UX и основных веб-показателей.",
+  "Versatile": "Универсальный",
+  "A_rich_incredibly_adoptable_template_that_scales_between_a_small_showcase_website_and_a_full_size_app": "Богатый и невероятно адаптируемый шаблон, который масштабируется от небольшого сайта-витрины до полноценного приложения.",
+  "This_is_a_simple_about_page_just_to_show_how_you_can_use_the_internationalization_in_different_pages": "Это простая страница о компании, показывающая, как можно использовать интернационализацию на разных страницах",
+  "Performant": "Производительный"
 }
