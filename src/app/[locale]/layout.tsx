@@ -62,7 +62,7 @@ export default function RootLayout({
             locale={locale}
             messages={messages as AbstractIntlMessages}
           >
-            <NextTopLoader color='var(--primary)' />
+            <NextTopLoader color='var(--primary)' showSpinner={false} />
             <Header locale={locale} />
             <main className='mx-auto max-w-screen-2xl'>{children}</main>
           </NextIntlClientProvider>

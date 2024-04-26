@@ -14,15 +14,20 @@ export default function DashboardPage() {
           <br />
           {t('to_Your_NextJS_Apps')}
         </h1>
-        <div className='text-text-secondary my-6 px-20 text-center text-2xl'>
+        <div className='my-6 px-20 text-center text-2xl text-text-secondary'>
           {t(
             'An_approachable_performant_and_versatile_boilerplate_for_building_SSR_applications'
           )}
         </div>
         <div className='mt-4 flex flex-row gap-4'>
-          <Button rounded size='large'>
-            {t('Use_Template')}
-          </Button>
+          <a
+            href='https://github.com/new?template_name=nextjs-template&template_owner=yahyaparvar'
+            target='_blank'
+          >
+            <Button rounded size='large'>
+              {t('Use_Template')}
+            </Button>
+          </a>
           <Button rounded size='large' variant='secondary'>
             {t('Learn_More')}
           </Button>
