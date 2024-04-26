@@ -28,9 +28,14 @@ export default function DashboardPage() {
               {t('Use_Template')}
             </Button>
           </a>
-          <Button rounded size='large' variant='secondary'>
-            {t('Learn_More')}
-          </Button>
+          <a
+            href='https://github.com/yahyaparvar/nextjs-template'
+            target='_blank'
+          >
+            <Button rounded size='large' variant='secondary'>
+              {t('Learn_More')}
+            </Button>
+          </a>
         </div>
       </section>
       <section className='bg-background-secondary py-20 max-lg:py-10'>
