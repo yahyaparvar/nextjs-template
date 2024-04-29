@@ -156,6 +156,17 @@
   *:lang(fa) {
     font-family: var(--rubik) !important;
   }
+  div::selection,
+  h1::selection,
+  button::selection,
+  p::selection,
+  span::selection,
+  a::selection,
+  h2::selection {
+    background-color: rgb(121, 255, 225);
+    text-shadow: rgb(0, 102, 255) 0px 0px 7px;
+    color: rgb(248, 28, 229);
+  }
   body {
     @apply bg-background text-primary;
   }
