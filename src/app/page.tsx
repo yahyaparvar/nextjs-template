@@ -1,12 +1,26 @@
+'use client'
+
 import Button from './components/Button'
+import React, { useState, useEffect } from 'react'
+import url from '../../config'
 
 export default function DashboardPage() {
+  const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    fetch(url + '/api/hello')
+      .then(response => response.json())
+      .then(data => setMessage(data.message))
+      .catch(error => console.error('Error fetching the message:', error));
+  }, [])
+  console.log(url + '/api/hello')
+
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-24'>
         <h1 className='text-center text-9xl font-extrabold leading-tight'>
           <span className='bg-span-bg bg-clip-text text-transparent'>
-            uplift.
+            uplift. {message}
           </span>
           <br />
         </h1>
