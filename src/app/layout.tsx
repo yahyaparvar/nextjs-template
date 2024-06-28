@@ -1,10 +1,5 @@
-import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider'
+import { ThemeProvider } from '@/src/app/components/ThemeProvider'
 import type { Metadata } from 'next'
-import {
-  AbstractIntlMessages,
-  NextIntlClientProvider,
-  useMessages
-} from 'next-intl'
 import { Inter, Rubik, Space_Grotesk } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
@@ -34,7 +29,6 @@ export default function RootLayout({
   children: React.ReactNode
   params: { locale: string }
 }) {
-  const messages = useMessages()
   return (
     <html
       lang={locale}
@@ -49,19 +43,9 @@ export default function RootLayout({
           defaultTheme='light'
           themes={[
             'light',
-            'dark',
-            'instagram',
-            'facebook',
-            'discord',
-            'netflix',
-            'twilight',
-            'reddit'
+            'dark'
           ]}
         >
-          <NextIntlClientProvider
-            locale={locale}
-            messages={messages as AbstractIntlMessages}
-          >
             <NextTopLoader
               initialPosition={0.08}
               crawlSpeed={200}
@@ -75,7 +59,6 @@ export default function RootLayout({
             />
             <Header locale={locale} />
             <main className='mx-auto max-w-screen-2xl'>{children}</main>
-          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

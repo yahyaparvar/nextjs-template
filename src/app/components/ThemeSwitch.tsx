@@ -1,6 +1,5 @@
 'use client'
 import { capitalize } from '@/lib/utils'
-import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
 import { FiSun } from 'react-icons/fi'
@@ -8,7 +7,6 @@ import { useOnClickOutside } from 'usehooks-ts'
 import Button from './Button'
 
 export default function ThemeSwitch() {
-  const t = useTranslations('')
   const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false) // New state to control dropdown visibility
   const { setTheme, resolvedTheme, themes, theme } = useTheme()
@@ -25,7 +23,7 @@ export default function ThemeSwitch() {
         aria-expanded={isOpen}
         onClick={() => {}}
       >
-        <span className='ml-2'>{t('Theme')}</span>
+        <span className='ml-2'>Theme</span>
         <FiSun />
       </Button>
     )
@@ -44,7 +42,7 @@ export default function ThemeSwitch() {
         aria-expanded={isOpen}
         onClick={toggleDropdown}
       >
-        <span className='ml-2'>{t('Theme')}</span>
+        <span className='ml-2'>Theme</span>
         <FiSun />
       </Button>
       {isOpen && (
