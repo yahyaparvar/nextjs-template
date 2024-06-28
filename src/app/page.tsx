@@ -1,13 +1,24 @@
 import Button from './components/Button'
+import { Press_Start_2P } from 'next/font/google'
+const inter = Press_Start_2P({
+  subsets: ['latin'],
+  weight: '400'
+})
+// import { Press_Start_2P } from 'next/font/google'
+
+// const Press_Start_2P = ({
+//   subsets: ['latin'],
+//   weight: '400'
+// })
 
 export default function DashboardPage() {
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-24'>
         <h1 className='text-center text-9xl font-extrabold leading-tight'>
-          <span className='bg-span-bg bg-clip-text text-transparent'>
-            uplift.
-          </span>
+        <span className={`text-center text-9xl font-extrabold leading-tight ${inter.className} bg-span-bg bg-clip-text text-transparent`}>
+          uplift
+        </span>
           <br />
         </h1>
         <div className='my-6 px-20 text-center text-3xl text-text-secondary'>
