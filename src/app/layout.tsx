@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/src/app/components/ThemeProvider'
 import type { Metadata } from 'next'
-import { Inter, Rubik, Space_Grotesk } from 'next/font/google'
+import { Inter, Rubik, Space_Grotesk, Press_Start_2P} from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 import { Header } from './components/Header'
 import './globals.css'
@@ -17,6 +17,16 @@ const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-space-grotesk'
 })
+const press_start_2p = Press_Start_2P({
+  subsets: ['latin'],
+  variable: '--font-press_start_2p',
+  weight: '400', // Example weight value, adjust as per function definition
+  style: 'normal', // Example style value, adjust as per function definition
+  display: 'block', // Example display value, adjust as per function definition
+  preload: true, // Example preload value, adjust as per function definition
+  fallback: ['fallback-font-name'], // Example fallback value, adjust as per function definition
+  adjustFontFallback: true, // Example adjustFontFallback value, adjust as per function definition
+});
 export const metadata: Metadata = {
   title: 'Next Temp',
   description: 'create next app By Yahya Parvar!'
