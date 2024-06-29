@@ -24,8 +24,12 @@ function MeshComponent() {
 export function Shiba() {
   return (
     <div className='flex justify-center items-center'>
-        <Canvas className='h-3xl w-2xl'>
-        <OrbitControls />
+      <Canvas style={{ height: '280px', width: '280px' }}>
+      <OrbitControls
+          minDistance={2.5}
+          maxDistance={2.5}
+          target={[0, 0, 0]}
+        />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <MeshComponent />
