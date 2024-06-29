@@ -1,30 +1,33 @@
 'use client'
 
 import Button from '@/src/app/components/Button'
-import { Press_Start_2P } from 'next/font/google'
-import styles from '@/src/app/styles/textLoader.module.css'
+import { BottomNavigation } from '@/src/app/components/BottomNavigation'
 
-const pressStart2P = Press_Start_2P({
+import { Press_Start_2P } from 'next/font/google'
+const inter = Press_Start_2P({
   subsets: ['latin'],
   weight: '400'
 })
 
-
 export default function DashboardPage() {
+  // const [message, setMessage] = useState('')
+
+  // useEffect(() => {
+  //   fetch(url + '/api/hello')
+  //     .then(response => response.json())
+  //     .then(data => setMessage(data.message))
+  //     .catch(error => console.error('Error fetching the message:', error));
+  // }, [])
+  // console.log(url + '/api/hello')
 
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-24'>
         <h1 className='text-center text-9xl font-extrabold leading-tight'>
 
-        <span className={`text-center text-9xl font-extrabold leading-tight ${pressStart2P.className} bg-span-bg bg-clip-text text-transparent`}>
+        <span className={`text-center text-9xl font-extrabold leading-tight ${inter.className} bg-span-bg bg-clip-text text-transparent`}>
           uplift
         </span>
-
-        <div className={styles.loader}>
-          <span className={styles.loaderText}>I love gay sex...</span>
-        </div>
-
           <br />
         </h1>
         <div className='my-6 px-20 text-center text-3xl text-text-secondary'>
@@ -32,7 +35,7 @@ export default function DashboardPage() {
         </div>
         <div className='mt-4 flex flex-row gap-4'>
           <a
-            href={`/login`}
+            href='https://github.com/new?template_name=nextjs-template&template_owner=yahyaparvar'
             target='_blank'
           >
             <Button rounded size='large'>
@@ -68,6 +71,7 @@ export default function DashboardPage() {
           </div>
         </div>
       </section>
+      <BottomNavigation/>
     </div>
   )
 }
