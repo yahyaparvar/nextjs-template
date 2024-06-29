@@ -1,7 +1,7 @@
 'use client'
 
-import Button from './components/Button'
-import { ProfileStats } from './components/ProfileStats'
+import Button from '@/src/app/components/Button'
+import { ProfileStats } from '@/src/app/components/ProfileStats'
 import { Press_Start_2P } from 'next/font/google'
 import Loader from '@/src/app/components/TextLoader'
 

@@ -1,9 +1,9 @@
 import { BottomNavigation } from "../components/BottomNavigation"
 
-export default function clan() {
+export default function DashboardPage() {
     return (
         <>
-            <h1>Clan Page</h1>
+            <h1>DashboardPage</h1>
             fuck u
             <BottomNavigation/>
         </>
