@@ -1,38 +1,47 @@
 'use client'
 
 import Button from './components/Button'
+import { BottomNavigation } from './components/BottomNavigation'
 import { ProfileStats } from './components/ProfileStats'
-import { Press_Start_2P } from 'next/font/google'
-import Loader from '@/src/app/components/TextLoader'
+import Loader from './components/TextLoader'
 
-const pressStart2P = Press_Start_2P({
+import { Press_Start_2P } from 'next/font/google'
+import { Shiba } from "./components/Shiba";
+const inter = Press_Start_2P({
   subsets: ['latin'],
   weight: '400'
 })
 
-
 export default function DashboardPage() {
-  const texts = ["Clash of GYMS", "Gym together", "Fitness"];
+  const fuckwit = ["fuck ur mum"]
+
+  // useEffect(() => {
+  //   fetch(url + '/api/hello')
+  //     .then(response => response.json())
+  //     .then(data => setMessage(data.message))
+  //     .catch(error => console.error('Error fetching the message:', error));
+  // }, [])
+  // console.log(url + '/api/hello')
 
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-10'>
         <h1 className='text-center text-9xl font-extrabold leading-tight'>
 
-          <span className={`text-center text-9xl font-extrabold leading-tight ${pressStart2P.className} bg-span-bg bg-clip-text text-transparent`}>
-            uplift
-          </span>
+        <span className={`text-center text-9xl font-extrabold leading-tight ${inter.className} bg-span-bg bg-clip-text text-transparent`}>
+          uplift
+        </span>
           <br />
-        </h1>  
-        <div className='h-16'>
-          <Loader texts={texts} typingSpeed={150} pauseTime={2000} />
-        </div>
+        </h1>
         <div className='my-6 px-20 text-center text-3xl text-text-secondary'>
-            level up with your friends in real life
+          level up with your friends in real life
+
         </div>
+        <Loader texts={fuckwit}/>
         <div className='mt-4 flex flex-row gap-4'>
+
           <a
-            href={`/login`}
+            href='https://github.com/new?template_name=nextjs-template&template_owner=yahyaparvar'
             target='_blank'
           >
             <Button rounded size='large'>
@@ -59,16 +68,16 @@ export default function DashboardPage() {
           </div>
         </div>
       </section>
-      <section className='flex flex-col items-center justify-center py-10'>
-        <div className=''>
-          <ProfileStats />
-          <div style={{ marginBottom: '20px' }}></div>
-        </div>
-        <div>
-          <ProfileStats/>
-        </div>
 
-      </section>
+      <Shiba />
+      <div>
+        <ProfileStats />
+        <div style={{ marginBottom: '20px' }}></div>
+      </div>
+      <div>
+        <ProfileStats/>
+      </div>
+      <BottomNavigation/>
     </div>
   )
 }
