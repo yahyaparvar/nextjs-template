@@ -7,7 +7,8 @@ import { ProfileStatsClan } from '../../components/ClanForms/ProfileStatsClan'
 import Loader from '../../components/TextLoader'
 import { CreateClanForm } from '../../components/ClanForms/CreateClan'
 import { Dropdown } from '../../components/ClanForms/Dropdown'
-
+import { ChatComponent } from '../../components/ClanForms/ClanChat'
+import { BombaclatChat } from '../../components/ClanForms/BombaclatChat'
 import { Press_Start_2P } from 'next/font/google'
 import { Townhall } from "../../components/Townhall";
 const inter = Press_Start_2P({
@@ -17,19 +18,28 @@ const inter = Press_Start_2P({
 
 export default function DashboardPage() {
   const fuckwit = ["fuck ur mum"]
+  const clan = {
+    "name": "clan",
+    "total_lifted_weight": "1500",
+    "num_clan_members" : "15",
+    "clan_level" : "9000"
+  }
 
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-10'>
-        <h1 className='text-center text-9xl font-extrabold leading-tight'>
+        {/* <h1 className='text-center text-9xl font-extrabold leading-tight'> */}
 
-        <span className={`text-center text-9xl font-extrabold leading-tight ${inter.className} bg-span-bg bg-clip-text text-transparent`}>
-          insert clan name
+        <span
+          className={`block text-center text-9xl font-extrabold leading-tight ${inter.className} bg-span-bg bg-clip-text text-transparent`}
+          style={{ width: '500px', display: 'block', overflow: 'visible' }}
+        >
+          {clan.name}
         </span>
           <br />
-        </h1>
+        {/* </h1> */}
         <div className='my-6 px-20 text-center text-3xl text-text-secondary'>
-          a member of the clan since 2024
+          a member of the {clan.name} since 2024
         {/* REPLACE THESE BUTTONS WITH A MODAL TO LEAVE OR JOIN CLAN */}
         </div>
         {/* <div className='h-20'>
@@ -53,9 +63,10 @@ export default function DashboardPage() {
         </div> */}
         <div className='flex'>
           <CreateClanForm/>
-          <Button className='bg-green-600 ml-10'>Join Clan</Button>
+          <Button className='bg-green-600 ml-10 mr-10'>Join Clan</Button>
           {/* <Dropdown className='bg-green-600 ml-10'/> */}
-          <Button className='bg-red-500 ml-10'>Leave Clan</Button>
+          {/* <Button className='bg-red-500 ml-10'>Leave Clan</Button> */}
+          <BombaclatChat/>
         </div>
       </section>
       {/* <section className='bg-background-secondary py-8 max-lg:py-10'>
@@ -78,10 +89,11 @@ export default function DashboardPage() {
       <Townhall />
       <div>
         <ProfileStatsClan />
-        <div style={{ marginBottom: '20px' }}></div>
+        <div style={{ marginBottom: '50px' }}></div>
       </div>
       <div>
-        <ProfileStatsClan/>
+        {/* <ProfileStatsClan/> */}
+        {/* <ChatComponent/> */}
       </div>
       <BottomNavigation/>
     </div>

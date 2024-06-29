@@ -16,13 +16,18 @@ export const CreateClanForm = () => {
     document.body.style.overflow = 'auto'; // Restore scrolling on the background content
   };
 
-  // Now you can use FormEvent without TypeScript errors
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Add form submission logic here
-    closeModal(); // Close modal after form submission
+    // Access the value from the input field using event.target
+    const clanNameInput = event.currentTarget.elements.namedItem('clan_name') as HTMLInputElement;
+    if (clanNameInput) {
+      const clanName = clanNameInput.value;
+      alert(clanName); // Alert the value entered in the clan name input field
+      closeModal(); // Close modal after form submission
+    }
   };
 
+  // clanData
   return (
     <div>
       <button onClick={openModal} className="bg-sky-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -42,36 +47,16 @@ export const CreateClanForm = () => {
                 <div className="mb-4">
                   <label htmlFor="clan_name" className="block text-gray-700 text-sm font-bold mb-2">Clan Name:</label>
                   <input
-                    className="border rounded w-full py-2 px-3 text-gray-700"
+                    className="border rounded w-full py-2 px-3 text-white-700"
                     type="text"
                     name="clan_name"
                     id="clan_name"
                     placeholder="Clan Name"
                   />
                 </div>
-                <div className="mb-4">
-                  <label htmlFor="student_name" className="block text-gray-700 text-sm font-bold mb-2">Student Name:</label>
-                  <input
-                    className="border rounded w-full py-2 px-3 text-gray-700"
-                    type="text"
-                    name="student_name"
-                    id="student_name"
-                    placeholder="Enter Your Name"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="course_name" className="block text-gray-700 text-sm font-bold mb-2">Course Name:</label>
-                  <input
-                    className="border rounded w-full py-2 px-3 text-gray-700"
-                    type="text"
-                    name="course_name"
-                    id="course_name"
-                    placeholder="Enter Your Course Name"
-                  />
-                </div>
                 <div className="mb-4 text-center">
                   <button type="submit" className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-full">
-                    Save
+                    Create
                   </button>
                 </div>
               </form>
