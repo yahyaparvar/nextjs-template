@@ -2,23 +2,14 @@
 
 import Button from '@/src/app/components/Button'
 import { BottomNavigation } from '@/src/app/components/BottomNavigation'
-
 import { Press_Start_2P } from 'next/font/google'
+
 const inter = Press_Start_2P({
   subsets: ['latin'],
   weight: '400'
 })
 
 export default function DashboardPage() {
-  // const [message, setMessage] = useState('')
-
-  // useEffect(() => {
-  //   fetch(url + '/api/hello')
-  //     .then(response => response.json())
-  //     .then(data => setMessage(data.message))
-  //     .catch(error => console.error('Error fetching the message:', error));
-  // }, [])
-  // console.log(url + '/api/hello')
 
   return (
     <div>
