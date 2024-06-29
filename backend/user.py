@@ -3,6 +3,7 @@ from pocketbase import PocketBase
 
 pb = PocketBase('http://127.0.0.1:8090')
 
+
 def create_user(username, email, password):
     data = {
         "email": email,
@@ -10,8 +11,9 @@ def create_user(username, email, password):
         "username": username,
         "curr_xp": 0,
         "target_xp": 5,
-        "records": {"bench press:": 0, "barbell squat": 0, "deadlift": 0}
-        "num_workouts": 0,
+        # technically user-records should be a different table
+        "records": {"bench press:": 0, "barbell squat": 0, "deadlift": 0},
+        "num_workouts": 0
     }
 
     try:
@@ -20,3 +22,4 @@ def create_user(username, email, password):
     except Exception as e:
         print(f"Error creating user: {str(e)}")  # Print the error to the console for debugging
         return {'error': str(e)}, 500
+

@@ -3,16 +3,17 @@ from pocketbase import PocketBase
 
 pb = PocketBase('http://127.0.0.1:8090')
 
-def create_clan(userName, clanName):
+
+def create_clan(username, clan_name):
     data = {
-        "name": clanName,
-        "members": [userName],
+        "name": clan_name,
+        "members": [username],
         "curr_xp": 0,
         "target_xp": 10,
     }
     try:
         # Check if the clan name already exists
-        existing_clan = pb.collection("clans").get_first_list_item(f'name="{clanName}"')
+        existing_clan = pb.collection("clans").get_first_list_item(f'name="{clan_name}"')
         
         if existing_clan:
             return {'error': 'Clan name already taken'}, 400
@@ -23,12 +24,13 @@ def create_clan(userName, clanName):
     except Exception as e:
         return {'error': str(e)}, 500
 
-def add_member_to_clan(userName, clanName):
+
+def add_member_to_clan(username, clan_name):
     try:
-        user = pb.collection("users").get_first_list_item(f'username="{userName}"')
+        user = pb.collection("users").get_first_list_item(f'username="{username}"')
         if not user:
             return {'error': 'User not found'}, 404
-        clan = pb.collection("clans").get_first_list_item(f'name="{clanName}"')
+        clan = pb.collection("clans").get_first_list_item(f'name="{clan_name}"')
         if not clan:
             return {'error': 'Clan not found'}, 404
         members = clan.get('members', [])
@@ -38,12 +40,13 @@ def add_member_to_clan(userName, clanName):
         members.append(user['id'])
         updated_clan = pb.collection("clans").update(clan['id'], {'members': members})
         
-        return {'message': f'User {userName} added to clan {clanName} successfully'}, 200
+        return {'message': f'User {username} added to clan {clan_name} successfully'}, 200
     except Exception as e:
         return {'error': str(e)}, 500
 
-def levelUp(add_xp, clanName):
-    clan = pb.collection("clans").get_first_list_item(f'name="{clanName}"')
+
+def level_up(add_xp, clan_name):
+    clan = pb.collection("clans").get_first_list_item(f'name="{clan_name}"')
     if not clan:
       return {'error': 'Clan not found'}, 404
     
@@ -61,4 +64,4 @@ def levelUp(add_xp, clanName):
         # Just update the XP
         pb.collection("clans").update(clan['id'], {'xp': new_xp})
     
-    return {'message': f'Clan {clanName} updated successfully'}, 200
+    return {'message': f'Clan {clan_name} updated successfully'}, 200
