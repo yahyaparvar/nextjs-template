@@ -12,8 +12,9 @@ def create_user(username, email, password):
         "curr_xp": 0,
         "target_xp": 5,
         # technically user-records should be a different table
-        "records": {"bench press:": 0, "barbell squat": 0, "deadlift": 0},
-        "num_workouts": 0
+        # "records": {"bench press:": 0, "barbell squat": 0, "deadlift": 0},
+        # user-workouts should be different table
+        # "num_workouts": 0
     }
 
     try:
@@ -23,3 +24,10 @@ def create_user(username, email, password):
         print(f"Error creating user: {str(e)}")  # Print the error to the console for debugging
         return {'error': str(e)}, 500
 
+
+def user_level_up(username, level):
+    pass
+
+
+def user_stats(username):
+    pass

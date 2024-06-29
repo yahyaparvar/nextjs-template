@@ -20,12 +20,16 @@ def create_clan(username, clan_name):
         
         # Create the new clan
         new_clan = pb.collection("clans").create(data)
-        return {'message': f'Clan {name} created successfully with ID {new_clan["id"]}'}, 200
+        return {'message': f'Clan {data["name"]} created successfully with ID {new_clan["id"]}'}, 200
     except Exception as e:
         return {'error': str(e)}, 500
 
 
-def add_member_to_clan(username, clan_name):
+def leave_clan(username, clan_name):
+    pass
+
+
+def join_clan(username, clan_name):
     try:
         user = pb.collection("users").get_first_list_item(f'username="{username}"')
         if not user:
@@ -39,7 +43,7 @@ def add_member_to_clan(username, clan_name):
 
         members.append(user['id'])
         updated_clan = pb.collection("clans").update(clan['id'], {'members': members})
-        
+
         return {'message': f'User {username} added to clan {clan_name} successfully'}, 200
     except Exception as e:
         return {'error': str(e)}, 500
@@ -65,3 +69,7 @@ def level_up(add_xp, clan_name):
         pb.collection("clans").update(clan['id'], {'xp': new_xp})
     
     return {'message': f'Clan {clan_name} updated successfully'}, 200
+
+
+def clan_stats(clan_name):
+    pass
