@@ -15,14 +15,6 @@ const inter = Press_Start_2P({
 export default function DashboardPage() {
   const fuckwit = ["fuck ur mum"]
 
-  // useEffect(() => {
-  //   fetch(url + '/api/hello')
-  //     .then(response => response.json())
-  //     .then(data => setMessage(data.message))
-  //     .catch(error => console.error('Error fetching the message:', error));
-  // }, [])
-  // console.log(url + '/api/hello')
-
   return (
     <div>
       <section className='flex flex-col items-center justify-center py-10'>
@@ -37,11 +29,13 @@ export default function DashboardPage() {
           level up with your friends in real life
 
         </div>
-        <Loader texts={fuckwit}/>
+        <div className='h-20'>
+          <Loader texts={fuckwit}/>
+        </div>
         <div className='mt-4 flex flex-row gap-4'>
 
           <a
-            href='https://github.com/new?template_name=nextjs-template&template_owner=yahyaparvar'
+            href='/login'
             target='_blank'
           >
             <Button rounded size='large'>
