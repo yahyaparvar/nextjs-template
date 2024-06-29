@@ -44,13 +44,14 @@ export default function SignUpPage() {
     };
 
     return (
-        <section className="bg-gray-50 dark:bg-gray-900">
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <section>
+            <div className={`mt-10 text-center text-7xl font-extrabold leading-tight ${pressStart2P.className} bg-span-bg bg-clip-text text-transparent`}>
+                Welcome To
+                upLift
+            </div>
+            <div className="flex flex-col items-center justify-center lg:py-0">
                 <a href="/" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                     <h1 className='text-center text-9xl font-extrabold leading-tight'>
-                        <span className={`text-center text-9xl font-extrabold leading-tight ${pressStart2P.className} bg-span-bg bg-clip-text text-transparent`}>
-                            uplift
-                        </span>
                         <br />
                     </h1>
                 </a>

@@ -1,15 +1,21 @@
 import LoginForm from "../components/LoginForm"
+import { Press_Start_2P } from 'next/font/google'
+const pressStart2P = Press_Start_2P({
+  subsets: ['latin'],
+  weight: '400'
+})
+
 
 export default function LoginPage() {
     return (
-        <section className="bg-gray-50 dark:bg-gray-900">
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                    <img className="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" />
-                    Flowbite
-                </a>
+        <section className="text-center">
+                <span className={`text-center text-7xl font-extrabold leading-tight ${pressStart2P.className} bg-span-bg bg-clip-text text-transparent bg-black pt-15`}>
+                    Welcome to
+                    uplift
+                </span>
+            <div className="flex flex-col items-center justify-center pt-10">
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                    <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <div className="p-6 space-y-4 md:space-y-6 sm:p-10">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                             Sign in to your account
                         </h1>
