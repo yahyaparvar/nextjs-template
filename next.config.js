@@ -1,8 +1,8 @@
-const createNextIntlPlugin = require('next-intl/plugin')
-
-const withNextIntl = createNextIntlPlugin()
-
+// @ts-check
+ 
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = withNextIntl(nextConfig)
+const nextConfig = {
+    /* config options here */
+  }
+   
+  module.exports = nextConfig

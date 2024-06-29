@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #333366;
+    --secondary: #097fa5;
+    --background: #ededed;
+    --background-secondary: #c8dde3;
+    --button: #097fa5;
+    --button-text: #fff;
+    --text-secondary: #3c3c3c;
+    --dropdown: #e0f4ff;
+    --dropdown-hover: #b3e5ff;
+    --button-secondary: #e7e7e7;
+    --selected: #9ec6ff;
+    --logo-shadow: #053949;
+    --logo-body: #00d8fe;
+    --span-bg: linear-gradient(to right, #4e4e9e, #097fa5, #3e87ed);
+  }
+  .dark {
+    --primary: #d6deff;
+    --secondary: #0ba6d1;
+    --background: #121212;
+    --background-secondary: #1b1b1b;
+    --button: #097fa5;
+    --button-text: #fff;
+    --text-secondary: #bbbbbb;
+    --dropdown: #2d2d2d;
+    --dropdown-hover: #454545;
+    --button-secondary: #1d1d1d;
+    --selected: #324e70;
+    --logo-shadow: #0a2e36;
+    --logo-body: #097fa5;
+    --span-bg: linear-gradient(to right, #8c00ff, #0fb4e1, #a1d930, #ae0000);
+  }
+  .sunset {
+    --primary: #ff6b6b;
+    --secondary: #ff9966;
+    --background: #f9f9f9;
+    --background-secondary: #e9e9e9;
+    --button: #ff6b6b;
+    --button-text: #fff;
+    --text-secondary: #333333;
+    --dropdown: #f9f9f9;
+    --dropdown-hover: #e9e9e9;
+    --button-secondary: #e9e9e9;
+    --selected: #ff9966;
+    --logo-shadow: #333333;
+    --logo-body: #ff6b6b;
+    --span-bg: linear-gradient(to right, #ff6b6b, #ff9966, #ffcc66);
+  }
+  .instagram {
+    --primary: #cc3f7e;
+    --secondary: #fcb045;
+    --background: #ffffff;
+    --background-secondary: #f1f1f1;
+    --button: #cc3f7e;
+    --button-text: #ffffff;
+    --text-secondary: #333333;
+    --dropdown: #ffffff;
+    --dropdown-hover: #f1f1f1;
+    --button-secondary: #ffffff;
+    --selected: #fcb045;
+    --logo-shadow: #000000;
+    --logo-body: #cc3f7e;
+    --span-bg: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  }
+  .facebook {
+    --primary: #3b5998;
+    --secondary: #4267b2;
+    --background: #f0f2f5;
+    --background-secondary: #e9eaef;
+    --button: #3b5998;
+    --button-text: #ffffff;
+    --text-secondary: #333333;
+    --dropdown: #f0f2f5;
+    --dropdown-hover: #e9eaef;
+    --button-secondary: #e9eaef;
+    --selected: #aeb3be;
+    --logo-shadow: #000000;
+    --logo-body: #3b5998;
+    --span-bg: linear-gradient(to right, #3b5998, #4267b2, #5578c2);
+  }
+  .discord {
+    --primary: #7289da;
+    --secondary: #7289da;
+    --background: #36393f;
+    --background-secondary: #2f3136;
+    --button: #7289da;
+    --button-text: #ffffff;
+    --text-secondary: #dcddde;
+    --dropdown: #36393f;
+    --dropdown-hover: #2f3136;
+    --button-secondary: #2f3136;
+    --selected: #1f2b57;
+    --logo-shadow: #000000;
+    --logo-body: #7289da;
+    --span-bg: linear-gradient(to right, #7289da, #7289da, #7289da);
+  }
+  .netflix {
+    --primary: #ff0000;
+    --secondary: #ffffff;
+    --background: #000000;
+    --background-secondary: #121212;
+    --button: #ff0000;
+    --button-text: #ffffff;
+    --text-secondary: #b3b3b3;
+    --dropdown: #000000;
+    --dropdown-hover: #121212;
+    --button-secondary: #121212;
+    --selected: #400202;
+    --logo-shadow: #000000;
+    --logo-body: #ff0000;
+    --span-bg: linear-gradient(to right, #ff0000, #ff0000, #ff0000);
+  }
+  .reddit {
+    --primary: #ff4500;
+    --secondary: #ff6347;
+    --background: #ffffff;
+    --background-secondary: #f5f5f5;
+    --button: #ff4500;
+    --button-text: #ffffff;
+    --text-secondary: #333333;
+    --dropdown: #ffffff;
+    --dropdown-hover: #f5f5f5;
+    --button-secondary: #f5f5f5;
+    --selected: #ff6347;
+    --logo-shadow: #000000;
+    --logo-body: #ff4500;
+    --span-bg: linear-gradient(to right, #ff4500, #ff6347, #ff4500);
+  }
+  .twilight {
+    --primary: #a296e0;
+    --secondary: #d84c21;
+    --background: #e0e0e8;
+    --background-secondary: #cfcfd9;
+    --button: #7d9dbf;
+    --button-text: #ffffff;
+    --text-secondary: #5a5d71;
+    --dropdown: #d9d2e9;
+    --dropdown-hover: #b1a8c7;
+    --button-secondary: #e0e0e8;
+    --selected: #b0394b;
+    --logo-shadow: #6d6875;
+    --logo-body: #8d82c4;
+    --span-bg: linear-gradient(to right, #8d82c4, #f7b7a3, #7d9dbf);
+  }
+}
+
+@layer base {
+  *:lang(ar) {
+    font-family: var(--rubik) !important;
+  }
+  *:lang(fa) {
+    font-family: var(--rubik) !important;
+  }
+  div::selection,
+  h1::selection,
+  button::selection,
+  p::selection,
+  span::selection,
+  a::selection,
+  h2::selection {
+    background-color: rgb(121, 255, 225);
+    text-shadow: rgb(0, 102, 255) 0px 0px 7px;
+    color: rgb(248, 28, 229);
+  }
+  body {
+    @apply bg-background text-primary;
+  }
+}
