@@ -22,7 +22,7 @@ def api_hello():
     return jsonify({"message": "Hello, World"})
 
 
-@app.route("/api/create_user", methods=["POST"])
+@app.route("/user/create", methods=["POST"])
 def create_user_route():
     data = request.get_json()
     print("Received data:", data)  # Log the received data for debugging purposes
@@ -54,7 +54,7 @@ def user_stats():
     return jsonify(ret)
 
 
-@app.route("/api/create_clan", methods=["POST"])
+@app.route("/clan/create", methods=["POST"])
 def create_clan_route():
     data = request.get_json()
     clan_name = data["clan_name"]
@@ -67,7 +67,7 @@ def create_clan_route():
     return jsonify(response), status_code
 
 
-@app.route('/clans/join_clan', methods=['POST'])
+@app.route('/clan/join_clan', methods=['POST'])
 def join_clan():
     data = request.get_json()
     username = data['username']
@@ -80,7 +80,7 @@ def join_clan():
     return jsonify(response), status_code
 
 
-@app.route('/clans/leave_clan', methods=['POST'])
+@app.route('/clan/leave_clan', methods=['POST'])
 def leave_clan():
     data = request.get_json()
     username = data['username']
@@ -95,7 +95,7 @@ def leave_clan():
 
 # potentially this isnt an actual endpoint:
 # when a user levels up, it automatically goes towards clan points
-@app.route('/clans/level_up', methods=['POST'])
+@app.route('/clan/level_up', methods=['POST'])
 def clan_level_up():
     data = request.get_json()
     add_xp = data['add_xp']
@@ -108,11 +108,19 @@ def clan_level_up():
     return jsonify(ret)
 
 
-@app.route("/clan_stats", methods=["GET"])
+@app.route("/clan/stats", methods=["GET"])
 def clan_stats():
     clan_name = request.args.get('clan_name')
     ret = clan_stats(clan_name)
     return jsonify(ret)
+
+
+@app.route("/clan/list_all", methods=["GET"])
+def clan_list_all():
+    pass
+    # clan_name = request.args.get('clan_name')
+    # ret = clan_stats(clan_name)
+    # return jsonify(ret)
 
 
 @app.route('/workout/start', methods=['POST'])
