@@ -1,5 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { Press_Start_2P } from 'next/font/google'
+const inter = Press_Start_2P({
+    subsets: ['latin'],
+    weight: '400'
+  })
 
 export const ProfileStats = () => {
   return (
@@ -41,7 +46,7 @@ export const ProfileStats = () => {
                               {/* <img src="monkey.jpg" alt="monkey coding" className="w-35 h-35 rounded-full" /> */}
                               <div>
                                   <div className="mt-2 flex justify-center gap-4">
-                                      <h3 className="text-5xl font-bold -700">username8</h3>
+                                      <h3 className="text-5xl font-bold -700">username</h3>
                                       <div className="flex items-end gap-1 text-green-500">
                                           {/* <svg className="w-3" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.00001 0L12 8H-3.05176e-05L6.00001 0Z" fill="currentColor"/>
@@ -49,7 +54,7 @@ export const ProfileStats = () => {
                                           {/* <span>2%</span> */}
                                       </div>
                                   </div>
-                                  <span className="block text-center -500">a member of uplift since 2024</span>
+                                  <span className={`block text-center -500 text-center text-md font-extrabold leading-tight ${inter.className} bg-span-bg bg-clip-text text-transparent pt-4 pb-4`}>a member of insertclan</span>
                               </div>
                               <table className="w-full -600">
                                   <tbody>
