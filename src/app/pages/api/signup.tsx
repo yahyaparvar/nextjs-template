@@ -2,14 +2,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const signup = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
-        const { email, password } = req.body;
+        const { username, email, password } = req.body;
         try {
-            const response = await fetch('http://localhost:5000/signup', {
+            const response = await fetch('http://localhost:5000/api/create_user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({ username, email, password })
             });
 
             if (response.ok) {

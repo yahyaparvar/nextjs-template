@@ -71,5 +71,6 @@ def level_up(add_xp, clan_name):
     return {'message': f'Clan {clan_name} updated successfully'}, 200
 
 
+
 def clan_stats(clan_name):
     pass

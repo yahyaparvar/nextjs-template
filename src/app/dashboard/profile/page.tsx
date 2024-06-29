@@ -4,6 +4,8 @@ import Button from '@/src/app/components/Button'
 import { ProfileStats } from '@/src/app/components/ProfileStats'
 import { Press_Start_2P } from 'next/font/google'
 import Loader from '@/src/app/components/TextLoader'
+import { Shiba } from "../../components/Shiba";
+import { BottomNavigation } from '../../components/BottomNavigation'
 
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
@@ -59,6 +61,7 @@ export default function DashboardPage() {
           </div>
         </div>
       </section>
+      <Shiba/>
       <section className='flex flex-col items-center justify-center py-10'>
         <div className=''>
           <ProfileStats />
@@ -69,6 +72,7 @@ export default function DashboardPage() {
         </div>
 
       </section>
+      <BottomNavigation/>
     </div>
   )
 }

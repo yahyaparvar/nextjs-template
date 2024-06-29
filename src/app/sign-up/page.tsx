@@ -2,6 +2,7 @@
 
 import { Press_Start_2P } from 'next/font/google'
 import { FormEvent, useState } from 'react';
+import url from "@/config";
 
 const pressStart2P = Press_Start_2P({
     subsets: ['latin'],
@@ -9,30 +10,32 @@ const pressStart2P = Press_Start_2P({
 })
 
 export default function SignUpPage() {
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-
     const handleSubmit = async (e: FormEvent) => {
         console.log("sign up form submit")
+        console.log(email, username, password);
         e.preventDefault();
         if (password !== confirmPassword) {
             alert('Passwords do not match');
             return;
         }
         try {
-            const response = await fetch('/api/signup', {
+            const response = await fetch(url + '/user/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({ username, email, password })
             });
 
             if (response.ok) {
                 alert('Sign up successful');
             } else {
+                console.log(response)
                 alert('Sign up failed');
             }
         } catch (error) {
@@ -57,6 +60,10 @@ export default function SignUpPage() {
                             Create an account
                         </h1>
                         <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit}>
+                        <div>
+                                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="username" name="username" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Username" />
+                            </div>
                             <div>
                                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                                 <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@gmail.com" />
