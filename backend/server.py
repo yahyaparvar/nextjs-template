@@ -25,11 +25,12 @@ def api_hello():
 @app.route("/api/create_user", methods=["POST"])
 def create_user_route():
     data = request.get_json()
+    print("Received data:", data)  # Log the received data for debugging purposes
     email = data["email"]
     password = data["password"]
     username = data["username"]
 
-    if not password or not email or password:
+    if not password or not email or not username:
         return jsonify({'error': 'Missing password or email or username'}), 400
 
     response, status_code = create_user(username, email, password)
@@ -54,7 +55,7 @@ def user_stats():
 
 
 @app.route("/api/create_clan", methods=["POST"])
-def create_user_route():
+def create_clan_route():
     data = request.get_json()
     clan_name = data["clan_name"]
     username = data["username"]
@@ -80,7 +81,7 @@ def join_clan():
 
 
 @app.route('/clans/leave_clan', methods=['POST'])
-def join_clan():
+def leave_clan():
     data = request.get_json()
     username = data['username']
     clan_name = data['clan_name']
@@ -132,24 +133,24 @@ def add_exercise_to_workout():
     return jsonify(ret)
 
 
-@app.route('/workout/save_workout_routine', methods=['POST'])
-def add_exercise_to_workout():
-    data = request.get_json()
-    workout_id = data['workout_id']
-    exercise_set = data['exercise_set']
-    weight = data['weight']
-    ret = add_set_to_workout(workout_id, exercise_set, weight)
-    return jsonify(ret)
+# @app.route('/workout/save_workout_routine', methods=['POST'])
+# def add_exercise_to_workout():
+#     data = request.get_json()
+#     workout_id = data['workout_id']
+#     exercise_set = data['exercise_set']
+#     weight = data['weight']
+#     ret = add_set_to_workout(workout_id, exercise_set, weight)
+#     return jsonify(ret)
 
 
-@app.route('/workout/save_workout_routine', methods=['POST'])
-def add_exercise_to_workout():
-    data = request.get_json()
-    workout_id = data['workout_id']
-    exercise_set = data['exercise_set']
-    weight = data['weight']
-    ret = add_set_to_workout(workout_id, exercise_set, weight)
-    return jsonify(ret)
+# @app.route('/workout/save_workout_routine', methods=['POST'])
+# def add_exercise_to_workout():
+#     data = request.get_json()
+#     workout_id = data['workout_id']
+#     exercise_set = data['exercise_set']
+#     weight = data['weight']
+#     ret = add_set_to_workout(workout_id, exercise_set, weight)
+#     return jsonify(ret)
 
 
 if __name__ == "__main__":
