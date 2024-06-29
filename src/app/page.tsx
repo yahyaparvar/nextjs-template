@@ -3,8 +3,8 @@
 import Button from './components/Button'
 import { BottomNavigation } from './components/BottomNavigation'
 import { ProfileStats } from './components/ProfileStats'
-
 import { Press_Start_2P } from 'next/font/google'
+import { Shiba } from "./components/Shiba";
 const inter = Press_Start_2P({
   subsets: ['latin'],
   weight: '400'
@@ -63,6 +63,7 @@ export default function DashboardPage() {
           </div>
         </div>
       </section>
+      <Shiba />
       <div>
         <ProfileStats />
         <div style={{ marginBottom: '20px' }}></div>
