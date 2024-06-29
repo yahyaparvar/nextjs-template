@@ -22,14 +22,15 @@ def api_hello():
     return jsonify({"message": "Hello, World"})
 
 
-@app.route("/api/create_user", methods=["POST"])
+@app.route("/user/create", methods=["POST"])
 def create_user_route():
     data = request.get_json()
+    print("Received data:", data)  # Log the received data for debugging purposes
     email = data["email"]
     password = data["password"]
     username = data["username"]
 
-    if not password or not email or password:
+    if not password or not email or not username:
         return jsonify({'error': 'Missing password or email or username'}), 400
 
     response, status_code = create_user(username, email, password)
@@ -53,8 +54,8 @@ def user_stats():
     return jsonify(ret)
 
 
-@app.route("/api/create_clan", methods=["POST"])
-def create_user_route():
+@app.route("/clan/create", methods=["POST"])
+def create_clan_route():
     data = request.get_json()
     clan_name = data["clan_name"]
     username = data["username"]
@@ -66,7 +67,7 @@ def create_user_route():
     return jsonify(response), status_code
 
 
-@app.route('/clans/join_clan', methods=['POST'])
+@app.route('/clan/join_clan', methods=['POST'])
 def join_clan():
     data = request.get_json()
     username = data['username']
@@ -79,8 +80,8 @@ def join_clan():
     return jsonify(response), status_code
 
 
-@app.route('/clans/leave_clan', methods=['POST'])
-def join_clan():
+@app.route('/clan/leave_clan', methods=['POST'])
+def leave_clan():
     data = request.get_json()
     username = data['username']
     clan_name = data['clan_name']
@@ -94,7 +95,7 @@ def join_clan():
 
 # potentially this isnt an actual endpoint:
 # when a user levels up, it automatically goes towards clan points
-@app.route('/clans/level_up', methods=['POST'])
+@app.route('/clan/level_up', methods=['POST'])
 def clan_level_up():
     data = request.get_json()
     add_xp = data['add_xp']
@@ -107,11 +108,19 @@ def clan_level_up():
     return jsonify(ret)
 
 
-@app.route("/clan_stats", methods=["GET"])
+@app.route("/clan/stats", methods=["GET"])
 def clan_stats():
     clan_name = request.args.get('clan_name')
     ret = clan_stats(clan_name)
     return jsonify(ret)
+
+
+@app.route("/clan/list_all", methods=["GET"])
+def clan_list_all():
+    pass
+    # clan_name = request.args.get('clan_name')
+    # ret = clan_stats(clan_name)
+    # return jsonify(ret)
 
 
 @app.route('/workout/start', methods=['POST'])
@@ -132,24 +141,24 @@ def add_exercise_to_workout():
     return jsonify(ret)
 
 
-@app.route('/workout/save_workout_routine', methods=['POST'])
-def add_exercise_to_workout():
-    data = request.get_json()
-    workout_id = data['workout_id']
-    exercise_set = data['exercise_set']
-    weight = data['weight']
-    ret = add_set_to_workout(workout_id, exercise_set, weight)
-    return jsonify(ret)
+# @app.route('/workout/save_workout_routine', methods=['POST'])
+# def add_exercise_to_workout():
+#     data = request.get_json()
+#     workout_id = data['workout_id']
+#     exercise_set = data['exercise_set']
+#     weight = data['weight']
+#     ret = add_set_to_workout(workout_id, exercise_set, weight)
+#     return jsonify(ret)
 
 
-@app.route('/workout/save_workout_routine', methods=['POST'])
-def add_exercise_to_workout():
-    data = request.get_json()
-    workout_id = data['workout_id']
-    exercise_set = data['exercise_set']
-    weight = data['weight']
-    ret = add_set_to_workout(workout_id, exercise_set, weight)
-    return jsonify(ret)
+# @app.route('/workout/save_workout_routine', methods=['POST'])
+# def add_exercise_to_workout():
+#     data = request.get_json()
+#     workout_id = data['workout_id']
+#     exercise_set = data['exercise_set']
+#     weight = data['weight']
+#     ret = add_set_to_workout(workout_id, exercise_set, weight)
+#     return jsonify(ret)
 
 
 if __name__ == "__main__":
