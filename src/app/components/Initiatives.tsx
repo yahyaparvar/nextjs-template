@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // Import FormEvent explicitly from react
 import { FormEvent } from 'react';
 
-export const CreateClanForm = () => {
+export const Initiatives = () => {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -30,8 +30,8 @@ export const CreateClanForm = () => {
   // clanData
   return (
     <div>
-      <button onClick={openModal} className="bg-sky-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Create Clan
+      <button onClick={openModal} className="bg-emerald-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-3">
+        Initiatives
       </button>
 
       {showModal && (
@@ -40,28 +40,16 @@ export const CreateClanForm = () => {
             {/* Semi-transparent background with backdrop-filter */}
             <div className="absolute inset-0 bg-black-800 opacity-75 backdrop-filter backdrop-blur-lg"></div>
             <div className="relative bg-white rounded-lg max-w-md w-full p-8">
-              <div className="text-black text-xl font-bold border-b border-gray-500 mb-4">
-                Create a Clan
-              </div>
-              <form onSubmit={handleSubmit} name="clan_name" id="clan_name">
-                <div className="mb-4">
-                  <label htmlFor="clan_name" className="block text-gray-700 text-sm font-bold mb-2">Clan Name:</label>
-                  <input
-                    className="border rounded w-full py-2 px-3 text-white-700"
-                    type="text"
-                    name="clan_name"
-                    id="clan_name"
-                    placeholder="Clan Name"
-                  />
+                <img src='/pushup.jpeg'/>
+                <div className='text-center mt-3 text-orange-900'>
+                    <a href="https://www.thepushupchallenge.com.au/?utm_campaign=pushforbetter&gad_source=1&gclid=CjwKCAjw4f6zBhBVEiwATEHFVnBMpjYVejJtfwSPdkenA6LF8CMpXJbhFfj_dyLu8tJfeHrewKr-oBoCWRoQAvD_BwE" target="blank">
+                        Sign up with your clan!
+                    </a>
                 </div>
-                <div className="mb-4 text-center">
-                  <button type="submit" className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-full">
-                    Create
-                  </button>
-                </div>
-              </form>
               <button onClick={closeModal} className="absolute top-0 right-0 mt-4 mr-4 text-gray-500 hover:text-gray-700">
-                Close
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
               </button>
             </div>
           </div>

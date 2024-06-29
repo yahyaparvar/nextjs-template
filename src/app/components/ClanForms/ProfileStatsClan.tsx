@@ -6,6 +6,16 @@ const inter = Press_Start_2P({
     weight: '400'
   })
 
+const clan = {
+"name": "clan",
+"total_lifted_weight": "1500",
+"num_clan_members" : "15",
+"clan_level" : "9000",
+"clan_level_over_time" : "200",
+"total_awards_won" : "223231"
+}
+
+
 export const ProfileStatsClan = () => {
   return (
       <>
@@ -60,7 +70,7 @@ export const ProfileStatsClan = () => {
                                   <tbody>
                                       <tr>
                                           <td className="py-2">Total weight lifted</td>
-                                          <td className="-500">896</td>
+                                          <td className="-500">{clan.total_lifted_weight}</td>
                                           <td>
                                               <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                   <rect opacity="0.4" width="17" height="21" rx="1" fill="#e4e4f2"/>
@@ -200,19 +210,18 @@ export const ProfileStatsClan = () => {
                                   </defs>
                               </svg>
                               <div className="mt-6">
-                                  <h5 className="text-xl -700 text-center">Ask to customize</h5>
+                                  <h5 className="text-xl -700 text-center">Total Clan Members</h5>
                                   <div className="mt-2 flex justify-center gap-4">
-                                      <h3 className="text-3xl font-bold -700">28</h3>
+                                      <h3 className="text-3xl font-bold -700">{clan.num_clan_members}</h3>
                                       <div className="flex items-end gap-1 text-green-500">
                                           <svg className="w-3" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                               <path d="M6.00001 0L12 8H-3.05176e-05L6.00001 0Z" fill="currentColor"/>
                                           </svg>
-                                          <span>2%</span>
+                                          <span>23%</span>
                                       </div>
                                   </div>
-                                  <span className="block text-center -500">Compared to last week 13</span>
-                              </div>
-                              <table className="mt-6 -mb-2 w-full -600">
+                                  {/* <span className="block text-center -500">Compared to last week 13</span> */}
+                                  <table className="mt-6 -mb-2 w-full -600">
                                   <tbody>
                                       <tr>
                                           <td className="py-2">Tailored ui</td>
@@ -273,6 +282,7 @@ export const ProfileStatsClan = () => {
                                       </tr>
                                   </tbody>
                               </table>   
+                              </div>
                           </div>
                       </div>
                   </div>
