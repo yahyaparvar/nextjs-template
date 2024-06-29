@@ -1,4 +1,4 @@
-import { BottomNavigation } from "../components/BottomNavigation"
+import { BottomNavigation } from '@/src/app/components/BottomNavigation'
 
 export default function workout() {
     return (

@@ -59,13 +59,16 @@ export default function DashboardPage() {
           </div>
         </div>
       </section>
-      <div>
-        <ProfileStats />
-        <div style={{ marginBottom: '20px' }}></div>
-      </div>
-      <div>
-        <ProfileStats/>
-      </div>
+      <section className='flex flex-col items-center justify-center py-10'>
+        <div className=''>
+          <ProfileStats />
+          <div style={{ marginBottom: '20px' }}></div>
+        </div>
+        <div>
+          <ProfileStats/>
+        </div>
+
+      </section>
     </div>
   )
 }
