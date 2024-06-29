@@ -4,6 +4,7 @@ import Button from '@/src/app/components/Button'
 import { ProfileStats } from '@/src/app/components/ProfileStats'
 import { Press_Start_2P } from 'next/font/google'
 import Loader from '@/src/app/components/TextLoader'
+import { BottomNavigation } from '../../components/BottomNavigation'
 
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
@@ -69,6 +70,7 @@ export default function DashboardPage() {
         </div>
 
       </section>
+      <BottomNavigation/>
     </div>
   )
 }
