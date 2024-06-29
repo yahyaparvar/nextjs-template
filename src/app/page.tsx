@@ -36,7 +36,6 @@ export default function DashboardPage() {
 
           <a
             href='/login'
-            target='_blank'
           >
             <Button rounded size='large'>
               Sign up!
