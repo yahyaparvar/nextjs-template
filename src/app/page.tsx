@@ -4,9 +4,9 @@ import Button from './components/Button'
 import { BottomNavigation } from './components/BottomNavigation'
 import { ProfileStats } from './components/ProfileStats'
 import Loader from './components/TextLoader'
-
 import { Press_Start_2P } from 'next/font/google'
 import { Shiba } from "./components/Shiba";
+
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
   weight: '400'
