@@ -7,7 +7,7 @@ import Loader from './components/TextLoader'
 
 import { Press_Start_2P } from 'next/font/google'
 import { Shiba } from "./components/Shiba";
-const inter = Press_Start_2P({
+const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
   weight: '400'
 })
@@ -20,9 +20,9 @@ export default function DashboardPage() {
       <section className='flex flex-col items-center justify-center py-10'>
         <h1 className='text-center text-9xl font-extrabold leading-tight'>
 
-        <span className={`text-center text-9xl font-extrabold leading-tight ${inter.className} bg-span-bg bg-clip-text text-transparent`}>
-          uplift
-        </span>
+          <span className={`text-center text-9xl font-extrabold leading-tight ${pressStart2P.className} bg-span-bg bg-clip-text text-transparent`}>
+            uplift
+          </span>
           <br />
         </h1>
         <div className='my-6 px-20 text-center text-3xl text-text-secondary'>
@@ -30,7 +30,7 @@ export default function DashboardPage() {
 
         </div>
         <div className='h-20'>
-          <Loader texts={fuckwit}/>
+          <Loader texts={fuckwit} />
         </div>
         <div className='mt-4 flex flex-row gap-4'>
 
@@ -69,9 +69,8 @@ export default function DashboardPage() {
         <div style={{ marginBottom: '20px' }}></div>
       </div>
       <div>
-        <ProfileStats/>
+        <ProfileStats />
       </div>
-      <BottomNavigation/>
     </div>
   )
 }
